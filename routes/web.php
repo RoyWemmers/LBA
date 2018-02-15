@@ -11,16 +11,9 @@
 |
 */
 
-use Illuminate\Support\Facades\Auth;
-
-Route::get('/', function () {
-    if(Auth::check()){
-        redirect('/logbook');
-    } else {
-        redirect('/login');
-    }
-});
+Route::get('/', 'TaskController@index');
+Route::get('/index', 'TaskController@index');
 
 Auth::routes();
 
-Route::get('/logbook', 'TaskController@index');
+
