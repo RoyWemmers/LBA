@@ -11,6 +11,16 @@
 |
 */
 
+use Illuminate\Support\Facades\Auth;
+
 Route::get('/', function () {
-    return view('welcome');
+    if(Auth::check()){
+        redirect('/logbook');
+    } else {
+        redirect('/login');
+    }
 });
+
+Auth::routes();
+
+Route::get('/logbook', 'TaskController@index');
