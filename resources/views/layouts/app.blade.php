@@ -10,8 +10,12 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
+    {{--FontAwesome--}}
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 </head>
 <body>
     <div id="app">
@@ -27,7 +31,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                        <li><a href="{{ route('tasks.create') }}" class="nav-link">Create Task</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -66,5 +70,15 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    {{--Date Picker--}}
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $( function() {
+            $( "#datepicker" ).datepicker({
+                dateFormat: "yy-mm-dd"
+            });
+        } );
+    </script>
 </body>
 </html>
