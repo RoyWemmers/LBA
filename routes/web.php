@@ -14,6 +14,8 @@
 Route::get('/', 'TaskController@index');
 Route::get('/index', 'TaskController@index');
 
+Route::resource('tasks', 'TaskController');
+
 Auth::routes();
 
 
